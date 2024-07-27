@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Temperature Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #chart, #monthlyTrend, #comparison {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .bar {
+            cursor: pointer;
+        }
+        .bar:hover {
+            opacity: 0.7;
+        }
+        .x-axis path, .y-axis path {
+            shape-rendering: crispEdges;
+        }
+        .x-axis text, .y-axis text {
+            font-size: 12px;
+        }
+        .x-axis text {
+            text-anchor: middle;
+        }
+        .y-axis text {
+            text-anchor: end;
+        }
+        .x-axis path {
+            shape-rendering: crispEdges;
+        }
+        .x-axis .tick line {
+            stroke: #ddd;
+        }
+        .y-axis .tick line {
+            stroke: #ddd;
+        }
+        #details, #comparisonContent {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        .hide {
+            display: none;
+        }
+        .tooltip {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            pointer-events: none;
+            display: none;
+            max-width: 200px;
+        }
+        .line {
+            fill: none;
+            stroke-width: 2px;
+        }
+        #legend {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #legend svg {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <div id="monthlyTrend" class="hide">
+        <div id="monthlyChart"></div>
+    </div>
+    <div id="comparison" class="hide">
+        <div id="comparisonChart"></div>
+        <div id="legend"></div>
+    </div>
+    <div id="details">Welcome to the City Temperature Visualization. Click on a city to see more details.</div>
+    <a href="#" class="button hide" id="backButton">Back to City Data</a>
+    <a href="#" class="button hide" id="backToMonthlyButton">Back to Monthly Data</a>
+    <a href="#" class="button hide" id="compareButton">Compare Monthly Trends</a>
+    <div id="tooltip" class="tooltip"></div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-annotation@2.2.0/dist/d3-annotation.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
